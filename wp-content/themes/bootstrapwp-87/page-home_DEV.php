@@ -11,35 +11,30 @@
  * Last Revised: March 4, 2012
  */
 get_header(); ?>
-<div class="container">
-  <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-  <header class="jumbotron masthead">
-    <div class="inner">
-      <h1><?php the_title();?></h1>
-      <?php the_content();?>
-    </div>
-
 
   </header>
-<?php endwhile; endif; ?>
-<hr class="soften">
-<div class="marketing">
-  <div class="row">
-    <div class="span4">
-      <?php
-      if ( function_exists('dynamic_sidebar')) dynamic_sidebar("home-left");
-      ?>
-    </div>
-    <div class="span4">
-      <?php
-      if ( function_exists('dynamic_sidebar')) dynamic_sidebar("home-middle");
-      ?>
-    </div>
-    <div class="span4">
+  <div class="container-fluid">
+    <div class="row-fluid">
+      <div class="span10"><?php
+              // Blog post query
+      query_posts( array( 'post_type' => 'post', 'cat'=> 4) );
+      if (have_posts()) : while ( have_posts() ) : the_post(); ?>
+        <div class="thumbBox">
+          <div class="thumbHolder">
+            <?php // Checking for a post thumbnail
+            if ( has_post_thumbnail() ) ?>
+            <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" >
+            <?php the_post_thumbnail();?></a>
+          </div>
+          <a href="<?php the_permalink(); ?>" title="<?php the_title();?>"><h3><?php the_title();?></h3></a>
+        </div>
+     <?php endwhile; endif; ?>
+     </div>
+     <div class="span2">
       <?php
       if ( function_exists('dynamic_sidebar')) dynamic_sidebar("home-right");
       ?>
+     </div>
     </div>
-  </div>
-</div><!-- /.marketing -->
+  </div><!-- /.container-fluid -->
 <?php get_footer();?>

@@ -1,0 +1,16 @@
+#page-back {
+  height: 100%;
+  background-color: black;
+}
+.container-fluid .white {
+  position: relative;
+  width: 960px;
+  min-height: 100%;
+  padding: 54px 14px 15px;
+  margin: 0 auto;
+  margin-top: 0px;
+  margin-right: auto;
+  margin-bottom: 0px;
+  margin-left: auto;
+  background: url(../wp-content/themes/bootstrapwp-87/img/white-bg.png);
+}
