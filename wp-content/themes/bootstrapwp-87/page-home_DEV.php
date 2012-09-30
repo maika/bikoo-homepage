@@ -23,8 +23,8 @@ get_header(); ?>
           <div class="thumbHolder">
             <?php // Checking for a post thumbnail
             if ( has_post_thumbnail() ) ?>
-            <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" >
-            <?php the_post_thumbnail();?></a>
+            <a href="<?php the_permalink(); ?>" onload="OnImageLoad(event);" title="<?php the_title_attribute(); ?>" >
+            <?php the_post_thumbnail('large');?> </a>
           </div>
           <a href="<?php the_permalink(); ?>" title="<?php the_title();?>"><h3><?php the_title();?></h3></a>
         </div>
