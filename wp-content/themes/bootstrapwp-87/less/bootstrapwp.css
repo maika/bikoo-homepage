@@ -5353,9 +5353,10 @@ ol.comment-list li p.meta strong {
 }
 .thumbBox {
   float: left;
-  width: 190px;
+  width: 208px;
+  height: 156px;
   padding: 5px 5px 5px 5px;
-  margin: 15px 15px 15px 15px;
+  margin: 21px 5px 5px 23px;
   font-size: 11px;
   background-color: white;
   box-shadow: 0 1px 3px rgba(34, 25, 25, 0.4);
@@ -5364,9 +5365,9 @@ ol.comment-list li p.meta strong {
 }
 .thumbHolder {
   position: relative;
-  width: 185px;
-  height: 139px;
-  margin: 0;
+  width: 208px;
+  height: 117px;
+  margin: 0px 0px 9px 0px;
   padding: 0;
   display: block;
   overflow: hidden;
