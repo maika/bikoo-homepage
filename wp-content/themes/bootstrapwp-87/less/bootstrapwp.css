@@ -5338,8 +5338,8 @@ ol.comment-list li p.meta strong {
   background-color: white;
 }
 .container-fluid {
-  padding-right: 20px;
-  padding-left: 20px;
+  padding-right: 0px;
+  padding-left: 0px;
   background: url(http://localhost/wp-content/themes/bootstrapwp-87/img/white-bg.png);
   *zoom: 1;
 }
