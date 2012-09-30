@@ -45,7 +45,13 @@ function ScaleImage(srcwidth, srcheight, targetwidth, targetheight, fLetterBox) 
 
 function OnImageLoad(evt) {
 
-    var img = evt.currentTarget;
+	var img;
+	if (evt && evt.currentTarget) {
+	img = evt.currentTarget;
+	}
+	else {
+	img = window.event.srcElement;
+	}
 
     // what's the size of this image and it's parent
     var w = $(img).width();
