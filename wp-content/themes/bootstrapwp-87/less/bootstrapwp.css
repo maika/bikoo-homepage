@@ -5372,3 +5372,7 @@ ol.comment-list li p.meta strong {
   display: block;
   overflow: hidden;
 }
+.attachment-medium {
+  width: 208px;
+  height: 156px;
+}
