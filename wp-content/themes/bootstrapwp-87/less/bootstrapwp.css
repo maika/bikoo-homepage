@@ -5381,3 +5381,10 @@ ol.comment-list li p.meta strong {
   display: block;
   overflow: hidden;
 }
+.post-image-holder {
+  width: 208px;
+  height: 117px;
+  margin: 0px 0px 0px 0px;
+  padding: 0;
+  overflow: hidden;
+}

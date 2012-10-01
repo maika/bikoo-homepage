@@ -492,7 +492,34 @@ add_action('future_to_publish', 'bootstrapwp_autoset_featured_img');
 
   }
 } // end bootstrapwp_breadcrumbs()
-
+/*
+ | -------------------------------------------------------------------
+| Adding Image Gallery
+| -------------------------------------------------------------------
+|
+| */
+/* Sizes can be thumbnail, full, medium, large */
+function getAttachedimages($size='full', $before = '', $after = '')
+{
+	global $post;
+	$qty = -1;
+	if ( $images = get_children(array(
+			'post_parent' => $post->ID,
+			'post_type' => 'attachment',
+			'numberposts' => $qty,
+			'post_mime_type' => 'image',
+			'order' => 'DESC',
+			'orderby' => 'menu_order ID'
+	)))
+	{
+		foreach( $images as $image )
+		{
+			$attachmenturl = wp_get_attachment_url($image->ID);
+			$attachmentimage = wp_get_attachment_image( $image->ID, $size );
+			echo $before . $attachmentimage . $after ;
+		}
+	}
+}
 
 /**
  * This theme was built with PHP, Semantic HTML, CSS, love, and a bootstrap.

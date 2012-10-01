@@ -16,11 +16,9 @@ get_header(); ?>
    <div class="container-fluid">
      <div class="row-fluid">
         <div class="row content">
-        <div class="span4">
-      <?php
-      if ( function_exists('dynamic_sidebar')) dynamic_sidebar("home-left");
-      ?>
-        </div><!-- /.span4 -->
+          <div class="span4">
+              <?php getAttachedimages('large', '<div class="post-image-holder">', '</div>'); ?>
+          </div><!-- /.span4 -->
 <div class="span8">
 
      
