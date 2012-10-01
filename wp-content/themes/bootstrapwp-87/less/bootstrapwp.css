@@ -5373,6 +5373,11 @@ ol.comment-list li p.meta strong {
   overflow: hidden;
 }
 .attachment-medium {
+  position: relative;
   width: 208px;
   height: 156px;
+  margin: 0px 0px 9px 0px;
+  padding: 0;
+  display: block;
+  overflow: hidden;
 }
