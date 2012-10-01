@@ -17,7 +17,7 @@ get_header(); ?>
     <div class="row-fluid">
       <div class="span10"><?php
               // Blog post query
-      query_posts( array( 'post_type' => 'post', 'cat'=> 4) );
+      query_posts( array( 'post_type' => 'post', 'category_name'=> 'projects') );
       if (have_posts()) : while ( have_posts() ) : the_post(); ?>
         <div class="thumbBox">
           <div class="thumbHolder">
