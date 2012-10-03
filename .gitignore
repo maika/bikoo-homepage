@@ -6,4 +6,4 @@ profile
 .buildpath
 .project
 .settings/org.eclipse.php.core.prefs
-plugins/social-media-mashup/smm-cache
+plugins/social-media-mashup/smm-cache/*
