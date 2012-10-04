@@ -12,7 +12,7 @@
  */
 get_header(); ?>
 <div class="container">
-<hr class="soften">
+<hr />
 <div class="container-fluid">
   <div class="row-fluid">
     <div class="span9">
@@ -24,8 +24,7 @@ get_header(); ?>
           <div class="AboutThumb">
             <?php // Checking for a post thumbnail
             if ( has_post_thumbnail() ) ?>
-            <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" >
-            <?php the_post_thumbnail('medium', array('onload' => "OnImageLoad(event);"));?></a>
+            <?php the_post_thumbnail('medium', array('onload' => "OnImageLoad(event);"));?>
           </div>
           <div class="AboutText">
             <h2><?php the_title();?></h2>

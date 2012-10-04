@@ -24,7 +24,7 @@ get_header(); ?>
             <?php // Checking for a post thumbnail
             if ( has_post_thumbnail() ) ?>
             <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" >
-            <?php the_post_thumbnail('medium', array('onload' => "OnImageLoad(event);"));?></a>
+            <?php the_post_thumbnail('thumbnail', array('onload' => "OnImageLoad(event);"));?></a>
           </div>
           <a href="<?php the_permalink(); ?>" title="<?php the_title();?>"><h3><?php the_title();?></h3></a>
         </div>
