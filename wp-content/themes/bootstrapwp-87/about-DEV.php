@@ -1,7 +1,7 @@
 <?php
 /**
  *
- * Template Name: Home Hero Template with 3 widget areas
+ * Template Name: About DEV Page
  *
  *
  * @package WP-Bootstrap
@@ -12,34 +12,33 @@
  */
 get_header(); ?>
 <div class="container">
-  <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-  <header class="jumbotron masthead">
-    <div class="inner">
-      <h1><?php the_title();?></h1>
-      <?php the_content();?>
-    </div>
-
-
-  </header>
-<?php endwhile; endif; ?>
 <hr class="soften">
-<div class="marketing">
-  <div class="row">
-    <div class="span4">
-      <?php
-      if ( function_exists('dynamic_sidebar')) dynamic_sidebar("home-left");
-      ?>
-    </div>
-    <div class="span4">
-      <?php
-      if ( function_exists('dynamic_sidebar')) dynamic_sidebar("home-middle");
-      ?>
-    </div>
-    <div class="span4">
+<div class="container-fluid">
+  <div class="row-fluid">
+    <div class="span9">
+    <?php
+              // Blog post query
+      query_posts( array( 'post_type' => 'post', 'category_name'=> 'about') );
+      if (have_posts()) : while ( have_posts() ) : the_post(); ?>
+        <div class="AboutBox">
+          <div class="AboutThumb">
+            <?php // Checking for a post thumbnail
+            if ( has_post_thumbnail() ) ?>
+            <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" >
+            <?php the_post_thumbnail('medium', array('onload' => "OnImageLoad(event);"));?></a>
+          </div>
+          <div class="AboutText">
+            <h2><?php the_title();?></h2>
+            <?php the_content();?>
+          </div>
+        </div>
+     <?php endwhile; endif; ?>
+     </div>
+    <div class="span3">
       <?php
       if ( function_exists('dynamic_sidebar')) dynamic_sidebar("home-right");
       ?>
     </div>
   </div>
-</div><!-- /.marketing -->
+</div><!-- /.container-fluid -->
 <?php get_footer();?>

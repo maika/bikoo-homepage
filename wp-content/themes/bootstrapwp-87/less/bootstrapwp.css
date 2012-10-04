@@ -5415,3 +5415,35 @@ h2 {
 h2 small {
   font-size: 18px;
 }
+.AboutBox {
+  float: left;
+  width: 637px;
+  height: 156px;
+  padding: 5px 5px 5px 5px;
+  margin: 21px 5px 5px 23px;
+  font-size: 11px;
+  background-color: white;
+  box-shadow: 0 1px 3px rgba(34, 25, 25, 0.4);
+  -moz-box-shadow: 0 1px 2px rgba(34, 25, 25, 0.4);
+  -webkit-box-shadow: 0 1px 3px rgba(34, 25, 25, 0.4);
+}
+.AboutThumb {
+  float: left;
+  width: 208px;
+  height: 117px;
+  margin: 0px 0px 9px 0px;
+  padding: 0;
+  display: block;
+  overflow: hidden;
+}
+.AboutText {
+  text-align: left;
+}
+.AboutText h2 {
+  font-size: 24px;
+  text-align: left;
+  line-height: 36px;
+}
+.AboutText h2 small {
+  font-size: 18px;
+}
