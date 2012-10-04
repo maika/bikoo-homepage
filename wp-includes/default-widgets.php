@@ -1,4 +1,130 @@
 <?php
+//TODO: EXTRACT INTO PLUGIN
+function bikoo_get_month_link($year, $month) {
+	global $wp_rewrite;
+	if ( !$year )
+		$year = gmdate('Y', current_time('timestamp'));
+	if ( !$month )
+		$month = gmdate('m', current_time('timestamp'));
+
+	return get_site_url(null, 'press?monthnum='.$month.'&year='.$year);
+}
+
+function bikoo_get_calendar($initial = true, $echo = true) {
+	global $wpdb, $m, $monthnum, $year, $wp_locale, $posts;
+
+	$cache = array();
+	$key = md5( $m . $monthnum . $year );
+	$cache_section = 'get_bikoo_calendar';
+	if ( $cache = wp_cache_get( $cache_section, 'bikoo_calendar' ) ) {
+		if ( is_array($cache) && isset( $cache[ $key ] ) ) {
+			if ( $echo ) {
+				echo apply_filters( $cache_section,  $cache[$key] );
+				return;
+			} else {
+				return apply_filters( $cache_section,  $cache[$key] );
+			}
+		}
+	}
+
+	if ( !is_array($cache) )
+		$cache = array();
+
+	// Quick check. If we have no posts at all, abort!
+	if ( !$posts ) {
+		$gotsome = $wpdb->get_var("SELECT 1 as test FROM $wpdb->posts WHERE post_type = 'post' AND post_status = 'publish' LIMIT 1");
+		if ( !$gotsome ) {
+			$cache[ $key ] = '';
+			wp_cache_set( $cache_section, $cache, 'calendar' );
+			return;
+		}
+	}
+	$calendar_output = '';
+
+	$postdays = $wpdb->get_results("
+		SELECT DISTINCT MONTH(post_date) AS month, YEAR(post_date) AS year
+		FROM $wpdb->posts
+		WHERE post_type = 'post' AND post_status = 'publish'
+			ORDER BY post_date DESC
+			LIMIT 1");
+	if ( $postdays ) {
+		$old_year = "";
+		$calendar_output .="<ul>";
+		foreach ( (array) $postdays as $post ) {
+			if($old_year != $post->year)
+				$calendar_output.= '<li><h3>'.$post->year.'</h3></li>';
+			$calendar_output.= '<li><a href="' . bikoo_get_month_link($post->year, $post->month) . '" title="' . esc_attr( sprintf(__('View posts for %1$s %2$s'), $wp_locale->get_month($post->month), date('Y', mktime(0, 0 , 0, $post->month, 1, $post->year)))) . '"> ' . $wp_locale->get_month($post->month) . '</a></li>';
+		}
+		$calendar_output.='</ul>';
+	} else {
+		$calendar_output = "";
+	}
+
+
+	$cache[ $key ] = $calendar_output;
+	wp_cache_set( $cache_section, $cache, 'calendar' );
+
+	if ( $echo )
+		echo apply_filters( $cache_section,  $calendar_output );
+	else
+		return apply_filters( $cache_section,  $calendar_output );
+
+}
+/**
+ * Bikoo Calendar widget class
+ *
+ * @since 2.8.0
+ */
+class WP_Widget_Calendar_Bikoo extends WP_Widget {
+
+	function __construct() {
+		$widget_ops = array('classname' => 'widget_calendar_bikoo', 'description' => __( 'Bikoo calendar of your site&#8217;s posts') );
+		parent::__construct('bikoo_calendar', __('Bikoo Calendar'), $widget_ops);
+	}
+
+	function widget( $args, $instance ) {
+		extract($args);
+		$title = apply_filters('widget_title', empty($instance['title']) ? '&nbsp;' : $instance['title'], $instance, $this->id_base);
+		echo $before_widget;
+		if ( $title )
+			echo $before_title . $title . $after_title;
+		echo '<div id="calendar_wrap">';
+		bikoo_get_calendar();
+		echo '</div>';
+		echo $after_widget;
+	}
+
+	function update( $new_instance, $old_instance ) {
+		$instance = $old_instance;
+		$instance['title'] = strip_tags($new_instance['title']);
+
+		return $instance;
+	}
+
+	function form( $instance ) {
+		$instance = wp_parse_args( (array) $instance, array( 'title' => '' ) );
+		$title = strip_tags($instance['title']);
+?>
+		<p><label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title:'); ?></label>
+		<input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo esc_attr($title); ?>" /></p>
+<?php
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /**
  * Default Widgets
  *
@@ -1177,6 +1303,9 @@ function wp_widgets_init() {
 	register_widget('WP_Widget_Tag_Cloud');
 
 	register_widget('WP_Nav_Menu_Widget');
+
+	register_widget('WP_Widget_Calendar_Bikoo');
+
 
 	do_action('widgets_init');
 }

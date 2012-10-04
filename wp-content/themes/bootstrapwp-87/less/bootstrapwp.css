@@ -5415,6 +5415,7 @@ h2 {
 h2 small {
   font-size: 18px;
 }
+
 .AboutBox {
   float: left;
   width: 637px;
@@ -5442,4 +5443,9 @@ h2 small {
 }
 .AboutText h2 small {
   font-size: 18px;
+
+/* --------------------------------------------------------------------------------------*/
+
+.press_post{
+  clear: both;
 }
