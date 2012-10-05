@@ -1,7 +1,7 @@
 <?php
 /**
  *
- * Template Name: About DEV Page
+ * Template Name: Contact Dev Page
  *
  *
  * @package WP-Bootstrap
@@ -11,14 +11,13 @@
  * Last Revised: March 4, 2012
  */
 get_header(); ?>
-<div class="container">
 <hr />
 <div class="container-fluid">
   <div class="row-fluid">
     <div class="span9">
     <?php
               // Blog post query
-      query_posts( array( 'post_type' => 'post', 'category_name'=> 'about') );
+      query_posts( array( 'post_type' => 'post', 'category_name'=> 'contact') );
       if (have_posts()) : while ( have_posts() ) : the_post(); ?>
         <div class="AboutBox">
           <div class="AboutThumb">
@@ -31,22 +30,26 @@ get_header(); ?>
             <?php the_content();?>
           </div>
         </div>
-     <?php endwhile; endif; wp_reset_query(); ?>
+     <?php endwhile; endif; wp_reset_query();?>
      </div>
-     <vr />
     <div class="span3">
-      <div class="NewsWidget">
+      <div class="ProjectWidget"></div>
+      <h3>Projects</h3>
+      <hr />
       <?php
               // Blog post query
-      query_posts( array( 'post_type' => 'post', 'category_name'=> 'news', 'showposts'=>8) );
+      query_posts( array( 'post_type' => 'post', 'category_name'=> 'projects', 'showposts'=>4, 'orderby'=>'rand') );
       if (have_posts()) : while ( have_posts() ) : the_post(); ?>
-      <div class="NewsSide">
-        <?php echo content(15) ?>
-      </div>
-      <div class="NewsTime">
-      	<p><?php echo bootstrapwp_posted_on();?></p>
-      </div>
-     <?php endwhile; endif; ?>
+        <div class="thumbBox thumbox-widget">
+          <div class="thumbHolder">
+            <?php // Checking for a post thumbnail
+            if ( has_post_thumbnail() ) ?>
+            <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" >
+            <?php the_post_thumbnail('thumbnail', array('onload' => "OnImageLoad(event);"));?></a>
+          </div>
+          <a href="<?php the_permalink(); ?>" title="<?php the_title();?>"><h3><?php the_title();?></h3></a>
+        </div> 
+     <?php endwhile; endif;?>
     </div>
     </div>
   </div>

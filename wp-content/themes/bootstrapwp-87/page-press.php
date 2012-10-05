@@ -24,7 +24,7 @@ get_header(); ?>
     <div class="row-fluid">
       <div class="span10"><?php
       // Blog post query
-      query_posts( array( 'post_type' => 'post', 'category_name'=> 'news', 'year' => $year, 'monthnum'=>$monthnum) );
+      query_posts( array( 'post_type' => 'post', 'category_name'=> 'news', 'showposts'=>8, 'year' => $year, 'monthnum'=>$monthnum) );
       if (have_posts()) : while ( have_posts() ) : the_post(); ?>
         <div class="press_post">
           <div class="thumbBox">
@@ -44,7 +44,7 @@ get_header(); ?>
      </div>
      <div class="span2">
       <?php
-      if ( function_exists('dynamic_sidebar')) dynamic_sidebar("home-right");
+      if ( function_exists('dynamic_sidebar')) dynamic_sidebar("home-middle");
       ?>
      </div>
     </div>
