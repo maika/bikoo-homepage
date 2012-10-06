@@ -27,6 +27,7 @@ get_header(); ?>
      		  <header class="jumbotron subhead" id="overview">
      		    <h2><?php the_title();?></h2>
      		  </header>
+          <?php related_links() ?>
      		  <?php the_content();?>
      		  <?php the_tags( '<p>Tags: ', ', ', '</p>'); ?>
      		  <?php endwhile; // end of the loop. ?>
