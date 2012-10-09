@@ -170,6 +170,7 @@ if ( function_exists( 'add_theme_support' ) ) {
 if ( function_exists( 'add_image_size' ) ) {
   add_image_size( 'bootstrap-small', 260, 180 ); // 260 pixels wide by 180 pixels high
   add_image_size( 'bootstrap-medium', 360, 268 ); // 360 pixels wide by 268 pixels high
+  add_image_size( 'bikoo-single', 347, 195, true ); // 347 pixels wide by 195 pixels high
 }
 /*
 | -------------------------------------------------------------------

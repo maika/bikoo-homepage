@@ -17,7 +17,7 @@ get_header(); ?>
      <div class="row-fluid">
           <div class="span5">
           	<div class="post-image">
-              <?php getAttachedimages('large', '<div class="post-image-holder">', '</div>'); ?>
+              <?php getAttachedimages('bikoo-single', '<div class="post-image-holder">', '</div>'); ?>
               </div>
           </div><!-- /.span5 -->
 		  <div class="span7">
@@ -31,9 +31,9 @@ get_header(); ?>
      		  <?php the_content();?>
      		  <?php the_tags( '<p>Tags: ', ', ', '</p>'); ?>
      		  <?php endwhile; // end of the loop. ?>
-     		  <hr />
      		</div>
           </div><!-- /.span7 -->
         </div><!-- /.row -->
      </div><!-- /.container -->
+     		  <hr />
 <?php get_footer(); ?>
