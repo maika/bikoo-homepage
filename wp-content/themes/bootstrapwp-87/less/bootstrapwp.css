@@ -5477,3 +5477,10 @@ h2 small {
 .thumbox-widget {
   margin: 0px 0px 25px 0px;
 }
+.related-links-list {
+  display: inline-block;
+}
+.related-links-list li {
+  display: inline-block;
+  margin: 0px 22px 0px 0px;
+}
