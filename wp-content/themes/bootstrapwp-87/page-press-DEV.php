@@ -36,7 +36,7 @@ get_header(); ?>
               <?php the_post_thumbnail('medium', array('onload' => "OnImageLoad(event);"));?></a>
           </div>
           <div class="AboutText">
-            <a href="<?php the_permalink(); ?>" title="<?php the_title();?>"><h3><?php the_title();?></h3></a>
+            <a href="<?php the_permalink(); ?>" title="<?php the_title();?>"><h4><?php the_title();?></h4></a>
             <?php echo content(90) ?>
           </div>
         </div>

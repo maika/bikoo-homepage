@@ -27,7 +27,7 @@ get_header(); ?>
             <?php the_post_thumbnail('medium', array('onload' => "OnImageLoad(event);"));?>
           </div>
           <div class="AboutText">
-            <h2><?php the_title();?></h2>
+            <h4><?php the_title();?></h4>
             <?php the_content();?>
           </div>
         </div>

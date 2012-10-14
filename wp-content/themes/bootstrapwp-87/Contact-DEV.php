@@ -26,7 +26,7 @@ get_header(); ?>
             <?php the_post_thumbnail('medium', array('onload' => "OnImageLoad(event);"));?>
           </div>
           <div class="AboutText">
-            <h2><?php the_title();?></h2>
+            <h4><?php the_title();?></h4>
             <?php the_content();?>
           </div>
         </div>
@@ -47,7 +47,7 @@ get_header(); ?>
             <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" >
             <?php the_post_thumbnail('thumbnail', array('onload' => "OnImageLoad(event);"));?></a>
           </div>
-          <a href="<?php the_permalink(); ?>" title="<?php the_title();?>"><h3><?php the_title();?></h3></a>
+          <a href="<?php the_permalink(); ?>" title="<?php the_title();?>"><h4><?php the_title();?></h4></a>
         </div> 
      <?php endwhile; endif;?>
     </div>

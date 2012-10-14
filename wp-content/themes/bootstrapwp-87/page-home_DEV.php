@@ -26,7 +26,7 @@ get_header(); ?>
             <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" >
             <?php the_post_thumbnail('thumbnail', array('onload' => "OnImageLoad(event);"));?></a>
           </div>
-          <a class="thumbLink" href="<?php the_permalink(); ?>" title="<?php the_title();?>"><h2><?php the_title();?></h2></a>
+          <a class="thumbLink" href="<?php the_permalink(); ?>" title="<?php the_title();?>"><h4><?php the_title();?></h4></a>
         </div>
      <?php endwhile; endif; ?>
      </div>

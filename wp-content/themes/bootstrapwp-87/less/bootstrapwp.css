@@ -5372,7 +5372,7 @@ ol.comment-list li p.meta strong {
   display: block;
   overflow: hidden;
 }
-.thumbLink h2 {
+.thumbLink h4 {
   font-size: 24px;
   text-align: left;
   line-height: 24px;
@@ -5447,12 +5447,12 @@ h4 small {
   padding: 0px 30px 0px 0px;
   text-align: left;
 }
-.AboutText h2 {
+.AboutText h4 {
   font-size: 24px;
   text-align: left;
   line-height: 36px;
 }
-.AboutText h2 small {
+.AboutText h4 small {
   font-size: 18px;
 }
 .press_post {
@@ -5488,6 +5488,14 @@ h4 small {
 }
 .thumbox-widget {
   margin: 0px 0px 25px 0px;
+}
+.thumbox-widget h4 {
+  font-size: 24px;
+  text-align: left;
+  line-height: 36px;
+}
+.thumbox-widget h4 small {
+  font-size: 18px;
 }
 .related-links-list {
   display: inline-block;
