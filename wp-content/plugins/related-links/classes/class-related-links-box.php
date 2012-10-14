@@ -170,7 +170,7 @@ class Related_Links_Box
 						<input type="hidden" name="related_links[posts][]" value="<?php echo $id; ?>" />
 						<input type="hidden" name="related_links[custom][<?php echo $id; ?>][]" value="<?php echo $custom_meta[0]; ?>" />
 						<input type="hidden" name="related_links[custom][<?php echo $id; ?>][]" value="<?php echo $custom_meta[1]; ?>" />
-						<span class="selected-title" title="<?php echo $custom_meta[1]; ?>"><?php echo $custom_meta[0]; ?></span>
+						<span class="selected-title" title="<?php echo $custom_meta[1]; ?>"><?php echo urldecode($custom_meta[0]); ?></span>
 						<span class="selected-right"><span class="selected-type"><?php _e('Custom', 'related-links'); ?></span><a href="#" class="selected-delete"><?php _e('Delete', 'related-links'); ?></a></span></li>
 					<?php
 				}

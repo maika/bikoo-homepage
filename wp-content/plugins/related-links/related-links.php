@@ -122,7 +122,7 @@ function related_links()
 	<?php if ( !empty( $related_links ) ) : ?>
 	<ul class="related-links-list">
 	<?php foreach ( $related_links as $link ): ?>
-		<li><a href="<?php echo $link['url']; ?>"><?php echo $link['title']; ?></a></li>
+		<li><a href="<?php echo $link['url']; ?>"><?php echo urldecode($link['title']); ?></a></li>
 	<?php endforeach; ?>
 	</ul>
 	<?php endif; ?>
