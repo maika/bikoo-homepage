@@ -5421,6 +5421,7 @@ h2 small {
 }
 h4 {
   font-size: 24px;
+  text-align: center;
   line-height: 36px;
 }
 h4 small {
@@ -5506,11 +5507,11 @@ h4 small {
 }
 .news-image {
   float: left;
-  width: 347px;
+  width: 208px;
 }
 .news-image-holder {
-  width: 347px;
-  height: 195px;
+  width: 208px;
+  height: 156px;
   margin: 0px 0px 19px 0px;
   padding: 0;
   display: block;
