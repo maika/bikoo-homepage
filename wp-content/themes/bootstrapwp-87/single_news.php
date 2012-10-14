@@ -16,16 +16,19 @@ get_header(); ?>
    <div class="container-fluid">
      <div class="row-fluid">
           <div class="span2">
-          	<div class="post-image">
-              <?php getAttachedimages('bikoo-single', '<div class="post-image-holder">', '</div>'); ?>
+          	<div class="news-image"> <?php // Checking for a post thumbnail
+			  if ( has_post_thumbnail() ) ?>
+			  <div class="news-image-holder">
+                <?php the_post_thumbnail('medium', array('onload' => "OnImageLoad(event);"));?>
               </div>
+            </div>
           </div><!-- /.span5 -->
 		  <div class="span10">
         	<div class="row content">
  <!-- Masthead
       ================================================== -->
      		  <header class="jumbotron subhead" id="overview">
-     		    <h2><?php the_title();?></h2>
+     		    <h4><?php the_title();?></h4>
      		  </header>
               <?php related_links() ?>
      		  <?php the_content();?>
