@@ -145,7 +145,7 @@ function social_media_mashup( $count = null, $echo = true ) {
 		// Engage!
 		$output .= "\n\t" . '<div class="smm-item smm-' . $item_class . '">
 		' . $final . '
-		<p class="entry-meta">' . $source . '<a href="' . $item->get_permalink() . '">' . smm_friendly_date( $item->get_date( 'c' ) ) . ' &rarr;</a></p>
+		<p class="entry-meta">' . $source . '<a target="_blank" href="' . $item->get_permalink() . '">' . smm_friendly_date( $item->get_date( 'c' ) ) . ' &rarr;</a></p>
 	</div>' . "\n";
 	
 	endforeach;
