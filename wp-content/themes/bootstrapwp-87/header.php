@@ -65,8 +65,10 @@
         </div>
       </div>
     </div>
-    <div class="logo">
-      <a href="<?php echo home_url('/') ?>"><img src="<?php bloginfo( 'template_url' );?>/img/bikoo_15.png" border="0"></a>
+    <div class="logo-bar">
+      <div class="logo">
+        <a href="<?php echo home_url('/') ?>"><img src="<?php bloginfo( 'template_url' );?>/img/bikoo_14.png" border="0"></a>
+      </div>
     </div>
     <!-- End Header -->
       <div id="content-wrapper">

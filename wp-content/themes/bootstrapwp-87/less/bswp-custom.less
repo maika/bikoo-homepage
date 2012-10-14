@@ -1,3 +1,22 @@
+// Navbar
+// -------------------------
+@navbarHeight:                    40px;
+@navbarBackground:                @grayDarker;
+@navbarBackgroundHighlight:       @grayDark;
+
+@navbarText:                      @grayLight;
+@navbarLinkColor:                 @grayLight;
+@navbarLinkColorHover:            @white;
+@navbarLinkColorActive:           @navbarLinkColorHover;
+@navbarLinkBackgroundHover:       transparent;
+@navbarLinkBackgroundActive:      @navbarBackground;
+
+@navbarSearchBackground:          lighten(@navbarBackground, 25%);
+@navbarSearchBackgroundFocus:     @white;
+@navbarSearchBorder:              darken(@navbarSearchBackground, 30%);
+@navbarSearchPlaceholderColor:    #ccc;
+@navbarBrandColor:                @navbarLinkColor;
+
 #page-back {
   height: 100%;
   background-color: white;
@@ -196,7 +215,14 @@ h4 {
   margin: 0px 22px 0px 0px;
 }
 
-.logo{
+.logo-bar {
+  width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+  
+}
+
+.logo {
   margin-top: -55px;
   width: 100px;
   margin-left: auto;
