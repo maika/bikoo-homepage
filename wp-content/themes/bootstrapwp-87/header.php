@@ -35,7 +35,7 @@
   ?></title>
     <meta charset="<?php bloginfo( 'charset' ); ?>" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, target-densitydpi=medium-dpi">
-	<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/img_resizer.js"></script>
+	  <script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/img_resizer.js"></script>
     <link rel="profile" href="http://gmpg.org/xfn/11" />
 
 
@@ -61,9 +61,12 @@
           <?php
            /** Loading WordPress Custom Menu with Fallback to wp_list_pages **/
       		wp_nav_menu( array( 'walker' => new bootstrapwp_walker_nav_menu(), 'menu' => 'main-menu', 'container_class' => 'nav-collapse', 'menu_class' => 'nav', 'menu_id' => 'main-menu')); ?>
-          <a class="brand" href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
+          <!-- <a class="brand" href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a> -->
         </div>
       </div>
+    </div>
+    <div class="logo">
+      <a href="<?php echo home_url('/') ?>"><img src="<?php bloginfo( 'template_url' );?>/img/bikoo_15.png" border="0"></a>
     </div>
     <!-- End Header -->
       <div id="content-wrapper">
