@@ -214,7 +214,7 @@ class Related_Links_Box
 			<div id="related-links-custom">
 				<a href="#" id="related-links-custom-addurl"><?php _e('Add Link', 'related-links'); ?></a>
 				<div id="related-links-custom-content">
-					<p class="button-controls"><label class="howto"><span><?php _e('Label', 'related-links'); ?>:</span><input id="related-links-custom-label" type="text" class="regular-text" placeholder="<?php _e('Link name', 'related-links'); ?>"></label></p>
+					<p class="button-controls"><label class="howto"><span><?php _e('Label', 'related-links'); ?>:</span><textarea id="related-links-custom-label" type="text" class="regular-text" placeholder="<?php _e('Link name', 'related-links'); ?>"></textarea></label></p>
 					<p class="button-controls"><label class="howto"><span><?php _e('URL', 'related-links'); ?>:</span><input id="related-links-custom-url" type="text" class="regular-text" placeholder="<?php _e('http://', 'related-links'); ?>"></label></p>
 					<p class="button-controls"><input type="button" id="related-links-custom-submit" class="button category-add-sumbit" value="Add Link" tabindex="3"></p>
 				</div>
