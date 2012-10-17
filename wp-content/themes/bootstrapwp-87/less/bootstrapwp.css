@@ -5400,8 +5400,8 @@ ol.comment-list li p.meta strong {
   width: 160px;
 }
 .post-image-holder {
-  width: 160px;
-  height: 1205px;
+  width: 347px;
+  height: 195px;
   margin: 0px 0px 19px 0px;
   padding: 0;
   display: block;
@@ -5438,13 +5438,13 @@ h4 small {
   float: left;
   width: 208px;
   height: 156px;
-  margin: 0px 9px 9px 0px;
+  margin: 0px 15px 0px 0px;
   padding: 0;
   display: block;
   overflow: hidden;
 }
 .AboutText {
-  padding: 0px 30px 0px 0px;
+  padding: 0px 0px 0px 0px;
   text-align: left;
 }
 .AboutText h4 {
