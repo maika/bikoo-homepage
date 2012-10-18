@@ -24,7 +24,7 @@ get_header(); ?>
           <div class="AboutThumb">
             <?php // Checking for a post thumbnail
             if ( has_post_thumbnail() ) ?>
-            <?php the_post_thumbnail('medium', array('onload' => "OnImageLoad(event);"));?>
+            <?php the_post_thumbnail('thumbnail', array('onload' => "OnImageLoad(event);"));?>
           </div>
           <div class="AboutText">
             <h4><?php the_title();?></h4>
@@ -33,7 +33,7 @@ get_header(); ?>
         </div>
      <?php endwhile; endif; wp_reset_query(); ?>
      </div>
-     <vr />
+     <hr />
     <div class="span3">
       <div class="NewsWidget">
       <?php

@@ -5373,7 +5373,7 @@ ol.comment-list li p.meta strong {
   overflow: hidden;
 }
 .thumbLink h4 {
-  font-size: 24px;
+  font-size: 20px;
   text-align: left;
   line-height: 24px;
 }
@@ -5455,6 +5455,14 @@ h4 small {
 .AboutText h4 small {
   font-size: 18px;
 }
+.AboutText h5 {
+  font-size: 14px;
+  text-align: left;
+  line-height: 18px;
+}
+.AboutText h5 small {
+  font-size: 18px;
+}
 .press_post {
   clear: both;
 }
@@ -5490,7 +5498,7 @@ h4 small {
   margin: 0px 0px 25px 0px;
 }
 .thumbox-widget h4 {
-  font-size: 24px;
+  font-size: 18px;
   text-align: left;
   line-height: 36px;
 }
