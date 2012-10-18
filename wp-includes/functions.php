@@ -3645,16 +3645,44 @@ function excerpt($limit) {
   return $excerpt;
 }
  
-function content($limit) {
-  $content = explode(' ', get_the_content(), $limit);
-  if (count($content)>=$limit) {
-    array_pop($content);
-    $content = implode(" ",$content).'...';
-  } else {
-    $content = implode(" ",$content);
-  }	
+function content() {
+	$content = get_the_content();
   $content = preg_replace('/\[.+\]/','', $content);
   $content = apply_filters('the_content', $content); 
   $content = str_replace(']]>', ']]&gt;', $content);
+
   return $content;
+}
+
+function shortcontent($limit){
+	$lang = getCurrentLanguage();
+	$content = strip_tags( get_the_content() );
+
+	if ($lang == 'ja'){
+		$content = mb_substr($content, 0, $limit)."...";
+	}else{
+	  $content = explode($delimiter, $content, $limit);
+	  if (count($content)>=$limit) {
+	    array_pop($content);
+	    $content = implode($delimiter,$content).'...';
+	  } else {
+	    $content = implode($delimiter,$content);
+	  }	
+
+	}
+
+	return $content;
+
+}
+
+function getCurrentLanguage(){
+	if(!function_exists('icl_get_languages'))return "";
+	
+	$languages = icl_get_languages('skip_missing=1');
+  if(1 < count($languages)){
+    foreach($languages as $l){
+      if($l['active']) return $l['language_code'];
+    }
+  }
+	return "";
 }
