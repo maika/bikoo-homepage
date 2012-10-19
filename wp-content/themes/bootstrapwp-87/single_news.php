@@ -19,7 +19,7 @@ get_header(); ?>
           	<div class="news-image"> <?php // Checking for a post thumbnail
 			  if ( has_post_thumbnail() ) ?>
 			  <div class="news-image-holder">
-                <?php the_post_thumbnail('medium', array('onload' => "OnImageLoad(event);"));?>
+                <?php the_post_thumbnail('thumbnail', array('onload' => "OnImageLoad(event);"));?>
               </div>
               
               <?php related_links() ?>

@@ -41,7 +41,7 @@ get_header(); ?>
       query_posts( array( 'post_type' => 'post', 'category_name'=> 'news', 'showposts'=>8) );
       if (have_posts()) : while ( have_posts() ) : the_post(); ?>
       <div class="NewsSide">
-        <?php echo shortcontent(20) ?>
+        <?php the_title();?>
       </div>
       <div class="NewsTime">
       	<p><?php echo bootstrapwp_posted_on();?></p>
