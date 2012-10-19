@@ -3661,6 +3661,7 @@ function shortcontent($limit){
 	if ($lang == 'ja'){
 		$content = mb_substr($content, 0, $limit)."...";
 	}else{
+		$delimiter = " ";
 	  $content = explode($delimiter, $content, $limit);
 	  if (count($content)>=$limit) {
 	    array_pop($content);
