@@ -3654,15 +3654,17 @@ function content() {
   return $content;
 }
 
-function shortcontent($limit){
+function shortcontent($limit, $ja_limit = NULL){
 	$lang = getCurrentLanguage();
 	$content = strip_tags( get_the_content() );
-
+	
 	if ($lang == 'ja'){
-		$content = mb_substr($content, 0, $limit)."...";
+		if(is_null($ja_limit)) $ja_limit = $limit;	
+		$content = mb_substr($content, 0, $ja_limit)."...";
 	}else{
 		$delimiter = " ";
 	  $content = explode($delimiter, $content, $limit);
+
 	  if (count($content)>=$limit) {
 	    array_pop($content);
 	    $content = implode($delimiter,$content).'...';

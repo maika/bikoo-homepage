@@ -37,7 +37,7 @@ get_header(); ?>
           </div>
           <div class="AboutText">
             <a href="<?php the_permalink(); ?>" title="<?php the_title();?>"><h5><?php the_title();?></h5></a>
-
+           <?php echo shortcontent(90, 300);?>
           </div>
         </div>
      <?php endwhile; endif; ?>
