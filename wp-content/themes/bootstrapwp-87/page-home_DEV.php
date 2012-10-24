@@ -22,7 +22,7 @@ get_header(); ?>
             if ( has_post_thumbnail() ) ?>
             <?php the_post_thumbnail('bikoo-hero', array('onload' => "OnImageLoad(event);"));?>
           <h1>Heading</h1>
-          <p>Tagline</p>
+          <p class="innertags">Tagline</p>
           <p>
             <a class="btn btn-primary btn-large">
               Learn more
