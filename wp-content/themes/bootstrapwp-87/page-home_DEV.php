@@ -13,10 +13,29 @@
 get_header(); ?>
 
   </header>
+        <?php
+              // Blog post query
+      query_posts( array( 'post_type' => 'page', 'page_id' => '2' ) );
+      if (have_posts()) : while ( have_posts() ) : the_post(); ?>
+        <div id="homeHero" class="hero-unit">
+         <?php // Checking for a post thumbnail
+            if ( has_post_thumbnail() ) ?>
+            <?php the_post_thumbnail('bikoo-hero', array('onload' => "OnImageLoad(event);"));?>
+          <h1>Heading</h1>
+          <p>Tagline</p>
+          <p>
+            <a class="btn btn-primary btn-large">
+              Learn more
+            </a>
+          </p>
+        </div>
+        
+     <?php endwhile; endif; wp_reset_query()?>
   <hr />
   <div class="container-fluid">
     <div class="row-fluid">
-      <div class="span10"><?php
+      <div class="span10">
+        <?php
               // Blog post query
       query_posts( array( 'post_type' => 'post', 'category_name'=> 'projects') );
       if (have_posts()) : while ( have_posts() ) : the_post(); ?>

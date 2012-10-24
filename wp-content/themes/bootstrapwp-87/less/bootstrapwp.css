@@ -5542,3 +5542,8 @@ h4 small {
   -moz-box-shadow: 0 1px 2px rgba(34, 25, 25, 0.4);
   -webkit-box-shadow: 0 1px 3px rgba(34, 25, 25, 0.4);
 }
+#homeHero {
+  padding: 0px;
+  width: 940px;
+  height: 529px;
+}
