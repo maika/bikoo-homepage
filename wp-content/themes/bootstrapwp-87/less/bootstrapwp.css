@@ -5563,7 +5563,10 @@ h4 small {
 }
 .mast {
   position: absolute;
-  top: 355px;
+  top: 403px;
   margin-left: 767px;
   left: 0;
+}
+#buy {
+  top: 355px;
 }

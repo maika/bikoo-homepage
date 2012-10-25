@@ -23,6 +23,9 @@ get_header(); ?>
             <?php the_post_thumbnail('bikoo-hero', array('onload' => "OnImageLoad(event);"));?>
           <h1><?php the_title();?></h1>
           <?php the_content();?>
+            <a target="_blank" href="http://www.amazon.com/gp/product/B009SJ3JPM/ref=as_li_tf_il?ie=UTF8&camp=1789&creative=9325&creativeASIN=B009SJ3JPM&linkCode=as2&tag=bikoo-20" class="btn btn-primary btn-large mast" id="buy">
+              Add to Kindle
+            </a>
             <a href="http://bikoo.jp/demon_hunters/" class="btn btn-primary btn-large mast">
               Read More
             </a>
