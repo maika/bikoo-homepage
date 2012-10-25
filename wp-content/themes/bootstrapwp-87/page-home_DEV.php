@@ -21,13 +21,11 @@ get_header(); ?>
          <?php // Checking for a post thumbnail
             if ( has_post_thumbnail() ) ?>
             <?php the_post_thumbnail('bikoo-hero', array('onload' => "OnImageLoad(event);"));?>
-          <h1>Heading</h1>
-          <p class="innertags">Tagline</p>
-          <p>
-            <a class="btn btn-primary btn-large">
-              Learn more
+          <h1><?php the_title();?></h1>
+          <?php the_content();?>
+            <a class="btn btn-primary btn-large mast">
+              Read More
             </a>
-          </p>
         </div>
         
      <?php endwhile; endif; wp_reset_query()?>
