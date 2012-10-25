@@ -23,7 +23,7 @@ get_header(); ?>
             <?php the_post_thumbnail('bikoo-hero', array('onload' => "OnImageLoad(event);"));?>
           <h1><?php the_title();?></h1>
           <?php the_content();?>
-            <a class="btn btn-primary btn-large mast">
+            <a href="http://bikoo.jp/demon_hunters/" class="btn btn-primary btn-large mast">
               Read More
             </a>
         </div>
