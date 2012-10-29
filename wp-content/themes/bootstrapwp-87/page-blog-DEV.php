@@ -13,7 +13,7 @@ get_header(); ?>
   <div class="container">
  <!-- Masthead
  ================================================== -->
- <header class="jumbotron subhead" id="overview">
+ <header class="jumbotron subhead" id="pagehead">
   <h4><?php the_title();?></h4>
 </header>
 

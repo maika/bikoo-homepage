@@ -35,10 +35,6 @@ get_header(); ?>
 <hr />
  <?php comments_template(); ?>
 
- <?php bootstrapwp_content_nav('nav-below');?>
-
           </div><!-- /.span8 -->
-          <?php get_sidebar('blog'); ?>
-
 
 <?php get_footer(); ?>
