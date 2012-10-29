@@ -37,7 +37,7 @@ get_header(); ?>
     <?php
               // Blog post query
     $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
-    query_posts( array( 'post_type' => 'post', 'paged'=>$paged, 'showposts'=>0) );
+    query_posts( array( 'post_type' => 'post', 'category_name'=> 'blog', 'paged'=>$paged, 'showposts'=>0) );
     if (have_posts()) : while ( have_posts() ) : the_post(); ?>
     <div <?php post_class(); ?>>
       <a href="<?php the_permalink(); ?>" title="<?php the_title();?>"><h3><?php the_title();?></h3></a>
