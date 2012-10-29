@@ -5570,3 +5570,37 @@ h4 small {
 #buy {
   top: 355px;
 }
+p.Chapter {
+  font-style: normal;
+  font-size: 2.3em;
+  text-align: center;
+  text-indent: 0px;
+  padding: 53px 0px 0px 0px;
+}
+p.Subheading {
+  font-style: normal;
+  font-size: 3.3em;
+  text-align: center;
+  text-indent: 0px;
+  margin: 0px;
+  padding: 15px 0px 0px 0px;
+}
+p.SubChapter {
+  font-style: normal;
+  font-size: 1.17em;
+  text-align: center;
+  text-indent: 0px;
+  padding: 30px 0px 0px 0px;
+}
+p.FirstLine {
+  font-style: normal;
+  font-size: 1em;
+  text-indent: 0px;
+  margin: 0px;
+}
+p.Main-Text {
+  font-style: normal;
+  font-size: 1em;
+  text-indent: 8%;
+  margin: 0px;
+}
