@@ -28,30 +28,43 @@ get_header(); ?>
     <hr />
   </div><!-- /.span8 -->
 
-  <div class="span8">
+<div class="container-fluid">
+  <div class="row-fluid">
+    <div class="span9">
     <?php
               // Blog post query
-    $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
-    query_posts( array( 'post_type' => 'post', 'category_name'=> 'blog', 'paged'=>$paged, 'showposts'=>0) );
-    if (have_posts()) : while ( have_posts() ) : the_post(); ?>
-    <div <?php post_class(); ?>>
-      <a href="<?php the_permalink(); ?>" title="<?php the_title();?>"><h3><?php the_title();?></h3></a>
-      <p class="meta"><?php echo bootstrapwp_posted_on();?></p>
-      <div class="row">
-        <div class="span2"><?php // Checking for a post thumbnail
-        if ( has_post_thumbnail() ) ?>
-        <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" >
-          <?php the_post_thumbnail();?></a>
-        </div><!-- /.span2 -->
-        <div class="span6">
-         <?php the_excerpt();?>
-       </div><!-- /.span6 -->
-     </div><!-- /.row -->
+      query_posts( array( 'post_type' => 'post', 'category_name'=> 'blog') );
+      if (have_posts()) : while ( have_posts() ) : the_post(); ?>
+        <div class="AboutBox">
+          <div class="AboutThumb">
+            <?php // Checking for a post thumbnail
+            if ( has_post_thumbnail() ) ?>
+            <?php the_post_thumbnail('thumbnail', array('onload' => "OnImageLoad(event);"));?>
+          </div>
+          <div class="AboutText">
+      	    <a href="<?php the_permalink(); ?>" title="<?php the_title();?>"><h4><?php the_title();?></h4></a>
+            <?php the_excerpt();?>
+          </div>
+        </div>
+     <?php endwhile; endif; wp_reset_query(); ?>
+     </div>
      <hr />
-   </div><!-- /.post_class -->
- <?php endwhile; endif; ?>
- <?php bootstrapwp_content_nav('nav-below');?>
-
-</div><!-- /.span8 -->
-<?php get_sidebar('blog'); ?>
-<?php get_footer(); ?>
+    <div class="span3">
+      <div class="NewsWidget">
+      <?php
+              // Blog post query
+      query_posts( array( 'post_type' => 'post', 'category_name'=> 'blog', 'showposts'=>8) );
+      if (have_posts()) : while ( have_posts() ) : the_post(); ?>
+      <div class="NewsSide">
+      	<a href="<?php the_permalink(); ?>" title="<?php the_title();?>"><h6><?php the_title();?></h6></a>
+        <?php echo shortcontent(30,40);?>
+      </div>
+      <div class="NewsTime">
+      	<p><?php echo bootstrapwp_posted_on();?></p>
+      </div>
+     <?php endwhile; endif; ?>
+    </div>
+    </div>
+  </div>
+</div><!-- /.container-fluid -->
+<?php get_footer();?>\
