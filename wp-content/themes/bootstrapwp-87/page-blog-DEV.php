@@ -14,7 +14,7 @@ get_header(); ?>
  <!-- Masthead
  ================================================== -->
  <header class="jumbotron subhead" id="overview">
-  <h1><?php the_title();?></h1>
+  <h4><?php the_title();?></h4>
 </header>
 
 <div class="row content">

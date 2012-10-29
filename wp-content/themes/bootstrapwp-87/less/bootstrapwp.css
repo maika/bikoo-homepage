@@ -5604,3 +5604,11 @@ p.Main-Text {
   text-indent: 8%;
   margin: 0px;
 }
+.subhead h4 {
+  text-align: left;
+  font-size: 54px;
+  margin-bottom: 9px;
+  font-weight: bold;
+  letter-spacing: -1px;
+  line-height: 1;
+}
