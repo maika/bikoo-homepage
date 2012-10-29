@@ -25,10 +25,12 @@ get_header(); ?>
     wp_reset_query();
           // resetting the loop
     ?>
-    <hr />
+    
+     <hr />
   </div><!-- /.span8 -->
 
 <div class="container-fluid">
+
   <div class="row-fluid">
     <div class="span9">
     <?php
@@ -48,7 +50,7 @@ get_header(); ?>
         </div>
      <?php endwhile; endif; wp_reset_query(); ?>
      </div>
-     <hr />
+     
     <div class="span3">
       <div class="NewsWidget">
       <?php

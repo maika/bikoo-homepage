@@ -19,8 +19,8 @@ get_header(); ?>
       
  <!-- Masthead
       ================================================== -->
-      <header class="jumbotron subhead" id="overview">
-        <h1><?php _e( 'Oh no!', 'bootstrapwp' ); ?></h1>
+      <header class="jumbotron subhead" id="lostpage">
+        <h4><?php _e( 'Oh no!', 'bootstrapwp' ); ?></h4>
         <p class="lead"><?php _e( 'Bikoo cannot find the page you are looking for!  For now, why not read the first chapter of Demon Hunters?', 'bootstrapwp' ); ?></p>
       </header>
 	</div>
