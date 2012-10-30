@@ -37,7 +37,7 @@ get_header(); ?>
               // Blog post query
       query_posts( array( 'post_type' => 'post', 'category_name'=> 'blog') );
       if (have_posts()) : while ( have_posts() ) : the_post(); ?>
-        <div class="AboutBox">
+        <div class="ContactBox">
           <div class="AboutThumb">
             <?php // Checking for a post thumbnail
             if ( has_post_thumbnail() ) ?>
@@ -45,13 +45,14 @@ get_header(); ?>
           </div>
           <div class="AboutText">
       	    <a href="<?php the_permalink(); ?>" title="<?php the_title();?>"><h4><?php the_title();?></h4></a>
-      	    
-   <p class="meta"><?php echo bootstrapwp_posted_on();?></p>
+      	    <p class="meta"><?php echo bootstrapwp_posted_on();?></p>
             <?php the_excerpt();?>
+          </div>
+          
             <br/>
             <hr/>
-          </div>
         </div>
+        
      <?php endwhile; endif; wp_reset_query(); ?>
      </div>
      
