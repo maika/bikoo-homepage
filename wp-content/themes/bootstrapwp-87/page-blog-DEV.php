@@ -41,10 +41,12 @@ get_header(); ?>
           <div class="AboutThumb">
             <?php // Checking for a post thumbnail
             if ( has_post_thumbnail() ) ?>
-            <?php the_post_thumbnail('thumbnail', array('onload' => "OnImageLoad(event);"));?>
+            <a href="<?php the_permalink(); ?>" title="<?php the_title();?>"><?php the_post_thumbnail('thumbnail', array('onload' => "OnImageLoad(event);"));?></a>
           </div>
           <div class="AboutText">
       	    <a href="<?php the_permalink(); ?>" title="<?php the_title();?>"><h4><?php the_title();?></h4></a>
+      	    
+   <p class="meta"><?php echo bootstrapwp_posted_on();?></p>
             <?php the_excerpt();?>
           </div>
         </div>
