@@ -5621,6 +5621,14 @@ p.Main-Text {
   letter-spacing: -1px;
   line-height: 1;
 }
+#singlehead h4 {
+  text-align: left;
+  font-size: 54px;
+  margin-bottom: 9px;
+  font-weight: bold;
+  letter-spacing: -1px;
+  line-height: 1;
+}
 .button,
 #submit,
 .widget_search #searchsubmit,

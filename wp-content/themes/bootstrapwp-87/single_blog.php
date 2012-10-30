@@ -13,28 +13,32 @@
 
 get_header(); ?>
 <?php while ( have_posts() ) : the_post(); ?>
-  <div class="row">
+<div class="container">
+<div class="row">
   <div class="container">
    <?php if (function_exists('bootstrapwp_breadcrumbs')) bootstrapwp_breadcrumbs(); ?>
    </div><!--/.container -->
    </div><!--/.row -->
-   <div class="container">
-     
- <!-- Masthead
+   
+   <div class="container-fluid">
+     <div class="row-fluid">
+       <div class="span8">
+     <!-- Masthead
       ================================================== -->
-      <header class="jumbotron subhead" id="overview">
-        <h4><?php the_title();?></h4>
-      </header>
-         
-        <div class="row content">
-<div class="span8">
-   <p class="meta"><?php echo bootstrapwp_posted_on();?></p>
+         <header class="jumbotron subhead" id="singlehead">
+            <h4><?php the_title();?></h4>
+         </header>
+         <?php related_links()?>
+         <p class="meta"><?php echo bootstrapwp_posted_on();?></p>
             <?php the_content();?>
             <?php the_tags( '<p>Tags: ', ', ', '</p>'); ?>
-<?php endwhile; // end of the loop. ?>
-<hr />
- <?php comments_template(); ?>
-
-          </div><!-- /.span8 -->
-
-<?php get_footer(); ?>
+			<?php endwhile; // end of the loop. ?>
+		<hr />
+		    <?php comments_template(); ?>
+       </div>
+       <div class="span3">
+       
+       </div>
+     </div>
+   </div>
+   <?php get_footer(); ?>
