@@ -5463,6 +5463,12 @@ h4 small {
 .AboutText h5 small {
   font-size: 18px;
 }
+.ContactBox {
+  padding: 5px 5px 5px 5px;
+  margin: 21px 5px 5px 23px;
+  font-size: 12px;
+  background-color: white;
+}
 .NewsWidget h5 {
   font-size: 18px;
   text-align: center;

@@ -11,6 +11,8 @@
  * Last Revised: March 4, 2012
  */
 get_header(); ?>
+
+<div class="container">
 <hr />
 <div class="container-fluid">
   <div class="row-fluid">
@@ -19,7 +21,7 @@ get_header(); ?>
               // Blog post query
       query_posts( array( 'post_type' => 'post', 'category_name'=> 'contact') );
       if (have_posts()) : while ( have_posts() ) : the_post(); ?>
-        <div class="AboutBox">
+        <div class="ContactBox">
           <div class="AboutThumb">
             <?php // Checking for a post thumbnail
             if ( has_post_thumbnail() ) ?>
