@@ -48,6 +48,8 @@ get_header(); ?>
       	    
    <p class="meta"><?php echo bootstrapwp_posted_on();?></p>
             <?php the_excerpt();?>
+            <br/>
+            <hr/>
           </div>
         </div>
      <?php endwhile; endif; wp_reset_query(); ?>
@@ -55,13 +57,14 @@ get_header(); ?>
      
     <div class="span3">
       <div class="NewsWidget">
+      <h5>Latest News</h5>
       <?php
               // Blog post query
-      query_posts( array( 'post_type' => 'post', 'category_name'=> 'blog', 'showposts'=>8) );
+      query_posts( array( 'post_type' => 'post', 'category_name'=> 'news', 'showposts'=>8) );
       if (have_posts()) : while ( have_posts() ) : the_post(); ?>
       <div class="NewsSide">
       	<a href="<?php the_permalink(); ?>" title="<?php the_title();?>"><h6><?php the_title();?></h6></a>
-        <?php echo shortcontent(30,40);?>
+        <?php echo shortcontent(30,80);?>
       </div>
       <div class="NewsTime">
       	<p><?php echo bootstrapwp_posted_on();?></p>
@@ -71,4 +74,4 @@ get_header(); ?>
     </div>
   </div>
 </div><!-- /.container-fluid -->
-<?php get_footer();?>\
+<?php get_footer();?>
