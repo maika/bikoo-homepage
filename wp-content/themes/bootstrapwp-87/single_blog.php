@@ -22,21 +22,25 @@ get_header(); ?>
    
    <div class="container-fluid">
      <div class="row-fluid">
+       <div class="span1"></div>
        <div class="span8">
+         <div class="blog-head">
+           <?php the_post_thumbnail('bikoo-hero', array('onload' => "OnImageLoad(event);"));?>
+         </div>
      <!-- Masthead
       ================================================== -->
          <header class="jumbotron subhead" id="singlehead">
             <h4><?php the_title();?></h4>
          </header>
-         <?php related_links()?>
          <p class="meta"><?php echo bootstrapwp_posted_on();?></p>
             <?php the_content();?>
             <?php the_tags( '<p>Tags: ', ', ', '</p>'); ?>
 			<?php endwhile; wp_reset_query(); // end of the loop reset query. ?>
 		<hr />
+			
+            <?php related_links()?>
 		    <?php comments_template(); ?>
        </div>
-       <div class="span1"></div>
        <div class="span3">
          <div class="NewsWidget">
            <h5>Latest Posts</h5>
