@@ -25,7 +25,7 @@ get_header(); ?>
        <div class="span1"></div>
        <div class="span8">
          <div class="blog-head">
-           <?php the_post_thumbnail('bikoo-hero', array('onload' => "OnImageLoad(event);"));?>
+           <?php the_post_thumbnail('bikoo-hero');?>
          </div>
      <!-- Masthead
       ================================================== -->

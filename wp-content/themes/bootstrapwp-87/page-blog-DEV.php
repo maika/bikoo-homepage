@@ -41,7 +41,7 @@ get_header(); ?>
           <div class="AboutThumb">
             <?php // Checking for a post thumbnail
             if ( has_post_thumbnail() ) ?>
-            <a href="<?php the_permalink(); ?>" title="<?php the_title();?>"><?php the_post_thumbnail('thumbnail', array('onload' => "OnImageLoad(event);"));?></a>
+            <a href="<?php the_permalink(); ?>" title="<?php the_title();?>"><?php the_post_thumbnail('thumbnail');?></a>
           </div>
           <div class="AboutText">
       	    <a href="<?php the_permalink(); ?>" title="<?php the_title();?>"><h4><?php the_title();?></h4></a>

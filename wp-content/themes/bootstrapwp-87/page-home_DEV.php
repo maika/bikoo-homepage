@@ -20,7 +20,7 @@ get_header(); ?>
         <div id="homeHero" class="hero-unit">
          <?php // Checking for a post thumbnail
             if ( has_post_thumbnail() ) ?>
-            <?php the_post_thumbnail('bikoo-hero', array('onload' => "OnImageLoad(event);"));?>
+            <?php the_post_thumbnail('bikoo-hero');?>
           <h1><?php the_title();?></h1>
           <?php the_content();?>
             <a target="_blank" href="http://www.amazon.com/gp/product/B009SJ3JPM/ref=as_li_tf_il?ie=UTF8&camp=1789&creative=9325&creativeASIN=B009SJ3JPM&linkCode=as2&tag=bikoo-20" class="btn btn-primary btn-large mast" id="buy">
@@ -45,7 +45,7 @@ get_header(); ?>
             <?php // Checking for a post thumbnail
             if ( has_post_thumbnail() ) ?>
             <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" >
-            <?php the_post_thumbnail('thumbnail', array('onload' => "OnImageLoad(event);"));?></a>
+            <?php the_post_thumbnail('thumbnail');?></a>
           </div>
           <a class="thumbLink" href="<?php the_permalink(); ?>" title="<?php the_title();?>"><h4><?php the_title();?></h4></a>
         </div>

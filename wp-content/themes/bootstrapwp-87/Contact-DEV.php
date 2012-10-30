@@ -23,7 +23,7 @@ get_header(); ?>
           <div class="AboutThumb">
             <?php // Checking for a post thumbnail
             if ( has_post_thumbnail() ) ?>
-            <?php the_post_thumbnail('thumbnail', array('onload' => "OnImageLoad(event);"));?>
+            <?php the_post_thumbnail('thumbnail');?>
           </div>
           <div class="AboutText">
             <h4><?php the_title();?></h4>
@@ -45,7 +45,7 @@ get_header(); ?>
             <?php // Checking for a post thumbnail
             if ( has_post_thumbnail() ) ?>
             <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" >
-            <?php the_post_thumbnail('thumbnail', array('onload' => "OnImageLoad(event);"));?></a>
+            <?php the_post_thumbnail('thumbnail');?></a>
           </div>
           <a class="thumbLink" href="<?php the_permalink(); ?>" title="<?php the_title();?>"><h4><?php the_title();?></h4></a>
         </div> 
