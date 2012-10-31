@@ -15,8 +15,8 @@
  *
  * Last Revised: March 4, 2012
  */
-$year = !empty($_GET['year']) ? intval($_GET['year']) : null;
-$month = !empty($_GET['monthnum']) ? $_GET['monthnum'] : null;
+$year = !empty($_GET['press_year']) ? intval($_GET['press_year']) : null;
+$month = !empty($_GET['press_month']) ? $_GET['press_month'] : null;
 get_header(); ?>
 
   </header>

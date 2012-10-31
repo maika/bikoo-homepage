@@ -7,7 +7,7 @@ function bikoo_get_month_link($year, $month) {
 	if ( !$month )
 		$month = gmdate('m', current_time('timestamp'));
 
-	return get_site_url(null, 'press?monthnum='.$month.'&year='.$year);
+	return get_site_url(null, 'press?press_month='.$month.'&press_year='.$year);
 }
 
 function bikoo_get_calendar($initial = true, $echo = true) {
