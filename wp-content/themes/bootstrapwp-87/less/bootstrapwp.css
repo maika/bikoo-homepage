@@ -5399,9 +5399,14 @@ ol.comment-list li p.meta strong {
   float: left;
   width: 160px;
 }
+.copyright {
+  text-align: right;
+  font-size: 11px;
+  margin: 0px 0px 0px 0px;
+}
 .post-image-holder {
   width: 347px;
-  height: 195px;
+  height: 211px;
   margin: 0px 0px 19px 0px;
   padding: 0;
   display: block;
@@ -5636,6 +5641,7 @@ p.Main-Text {
   text-align: left;
   font-size: 40px;
   margin-bottom: 9px;
+  padding-top: 14px;
   font-weight: bold;
   letter-spacing: -1px;
   line-height: 1;

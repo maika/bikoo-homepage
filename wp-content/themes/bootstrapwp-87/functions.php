@@ -516,10 +516,29 @@ function getAttachedimages($size='full', $before = '', $after = '')
 	{
 		foreach( $images as $image )
 		{
+			global $post;
 			$attachmenturl = wp_get_attachment_url($image->ID);
 			$attachmentimage = wp_get_attachment_image( $image->ID, $size );
-			echo $before . $attachmentimage . $after ;
+			$img_title = $image->post_title;
+			$img_desc = $image->post_excerpt;
+			echo $before . $attachmentimage . '<p class="copyright">'.$img_desc.'</p>' . $after ;
 		}
+	}
+}
+/*
+ | -------------------------------------------------------------------
+| Adding Caption Display For Images
+| -------------------------------------------------------------------
+|
+| */
+/* Sizes can be thumbnail, full, medium, large */
+function the_post_image_caption() {
+	global $post;
+	$thumbnail_id    = get_post_thumbnail_id($post->ID);
+	$thumbnail_image = get_posts(array('p' => $thumbnail_id, 'post_type' => 'attachment'));
+
+	if ($thumbnail_image && isset($thumbnail_image[0])) {
+		echo '<p>'.$thumbnail_image[0]->post_title.'&nbsp;'.$thumbnail_image[0]->post_content.'</p>';
 	}
 }
 
