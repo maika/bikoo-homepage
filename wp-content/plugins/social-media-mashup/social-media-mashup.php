@@ -99,7 +99,7 @@ function social_media_mashup( $count = null, $echo = true ) {
 	foreach ( $feed->get_items( 0, $count ) as $item ):
 		
 		// Make links out of URLs in the text
-		$final = preg_replace('/\s(http:\/\/[^\s]+)/', ' <a href="$1">$1</a>', $item->get_description() );
+		$final = preg_replace('/\s(http:\/\/[^\s]+)/', ' <a target="_blank" href="$1">$1</a>', $item->get_description() );
 		
 		// If the description is blank, use the title
 		if ( $final == '' ) {
@@ -110,7 +110,7 @@ function social_media_mashup( $count = null, $echo = true ) {
 			// like in a "user uploads" YouTube feed.
 			$enclosure = $item->get_enclosure();
 			if ( $enclosure != '' ) {
-				$final .= '<br /><a href="' . $item->get_permalink() . '"><img src="' . $enclosure->get_thumbnail() . '" /></a>';
+				$final .= '<br /><a target="_blank" href="' . $item->get_permalink() . '"><img src="' . $enclosure->get_thumbnail() . '" /></a>';
 			}
 		}
 		

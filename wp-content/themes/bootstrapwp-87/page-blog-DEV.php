@@ -48,7 +48,6 @@ get_header(); ?>
       	    <p class="meta"><?php echo bootstrapwp_posted_on();?></p>
             <?php the_excerpt();?>
           </div>
-          
             <br/>
             <hr/>
         </div>
