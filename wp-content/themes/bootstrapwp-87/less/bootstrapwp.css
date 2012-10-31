@@ -5422,10 +5422,14 @@ h2 small {
 h4 {
   font-size: 24px;
   text-align: center;
+  color: #333;
   line-height: 36px;
 }
 h4 small {
   font-size: 18px;
+}
+h6 {
+  color: #333;
 }
 .AboutBox {
   float: left;
@@ -5458,6 +5462,7 @@ h4 small {
 .AboutText h5 {
   font-size: 14px;
   text-align: left;
+  color: #333;
   line-height: 18px;
 }
 .AboutText h5 small {
