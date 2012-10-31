@@ -36,6 +36,8 @@ get_header(); ?>
             <?php the_content();?>
             <?php the_tags( '<p>Tags: ', ', ', '</p>'); ?>
 			<?php endwhile; wp_reset_query(); // end of the loop reset query. ?>
+			<br />
+			<?php if( function_exists( do_sociable() ) ){ do_sociable(); } ?>
 		<hr />
 			
             <?php related_links()?>
