@@ -40,7 +40,7 @@ get_header(); ?>
       <hr />
       <?php
               // Blog post query
-      query_posts( array( 'post_type' => 'post', 'category_name'=> 'projects', 'showposts'=>4, 'orderby'=>'rand') );
+      query_posts( array( 'post_type' => 'post', 'category_name'=> 'projects', 'showposts'=>3, 'orderby'=>'rand') );
       if (have_posts()) : while ( have_posts() ) : the_post(); ?>
         <div class="thumbBox thumbox-widget">
           <div class="thumbHolder">
