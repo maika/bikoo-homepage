@@ -541,6 +541,22 @@ function the_post_image_caption() {
 		echo '<p>'.$thumbnail_image[0]->post_title.'&nbsp;'.$thumbnail_image[0]->post_content.'</p>';
 	}
 }
+/*
+ | -------------------------------------------------------------------
+| Adding custom excerpt length for Japanese
+| -------------------------------------------------------------------
+|
+| */
+function custom_excerpt_length( $length ) {
+	if (ICL_LANGUAGE_CODE=='ja'){
+		return 400;
+	}
+	else
+	{
+		return $length;
+	}
+}
+add_filter( 'excerpt_length', 'custom_excerpt_length' );
 
 /**
  * This theme was built with PHP, Semantic HTML, CSS, love, and a bootstrap.
